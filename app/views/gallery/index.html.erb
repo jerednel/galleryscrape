@@ -1,0 +1,9 @@
+<%= form_tag "/gallery/show/", :method => 'post' do %>
+<p><strong>Image Gallery Scraper</strong></p>
+<table>
+	<tr><td>CTYHOCNS (1 per line)</td></tr>
+  <tr><Td><%= text_area_tag "CTYHOCN", nil, rows: 10 %></td></tr>
+ </td></tr>
+  <tr><Td><%= submit_tag "Get Gallery Images" %></td></tr>
+ </table>
+<% end %>
