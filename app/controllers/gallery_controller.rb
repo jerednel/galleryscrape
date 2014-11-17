@@ -7,6 +7,7 @@ class GalleryController < ApplicationController
 	end
 
 	def show
+		@orientation = params[:Horizontal]
 		arr = params[:CTYHOCN].split("\r\n")
 		scrape_imgs(arr)
 	end

@@ -1,11 +1,73 @@
 
+<% if @orientation.nil? %>
+
 
 <table>
 	<% @table_hsh.each do |row| %>
 	  <% i = 0 %>
 	  <% row[:imgs].each do |img_url| %>
-	    <tr><td><%= row[:ctyhocn] %></td><td><img src="http://www3.hilton.com<%=img_url %>"></td><td><%= row[:captions][i].to_s.gsub!('<span class="title">', '').gsub!('</span>', '')  %></td><td>http://www3.hilton.com<%=img_url %></td></tr>
+	    <tr>
+	    	<td><%= row[:ctyhocn] %></td><td><img src="http://www3.hilton.com<%=img_url %>"></td>
+	    	<td><%= row[:captions][i].to_s.gsub!('<span class="title">', '').gsub!('</span>', '')  %></td>
+	    	<td>http://www3.hilton.com<%=img_url %></td>
+	    </tr>
 	    <% i = i + 1 %>
 	  <% end %>
 	<% end %>
 </table>
+
+<% else %>
+<table>
+
+		<tr>
+	<% @table_hsh.each do |row| %>
+	  <% i = 0 %>
+	  <% row[:imgs].each do |img_url| %>
+	    	<td>http://www3.hilton.com<%=img_url %></td>
+	    <% i = i + 1 %>
+	  <% end %>
+	<% end %>
+	</tr>
+
+		<tr>
+	<% @table_hsh.each do |row| %>
+	  <% i = 0 %>
+	  <% row[:imgs].each do |img_url| %>
+	    	<td><%= row[:captions][i].to_s.gsub!('<span class="title">', '').gsub!('</span>', '')  %></td>
+	    <% i = i + 1 %>
+	  <% end %>
+	<% end %>
+	</tr>
+
+
+	<tr>
+	<% @table_hsh.each do |row| %>
+	  <% i = 0 %>
+	  <% row[:imgs].each do |img_url| %>
+	    	<td><img src="http://www3.hilton.com<%=img_url %>"></td>
+	    <% i = i + 1 %>
+	  <% end %>
+	<% end %>
+
+
+	<tr>
+	<% @table_hsh.each do |row| %>
+	  <% i = 0 %>
+	  <% row[:imgs].each do |img_url| %>
+	    	<td><%= row[:ctyhocn] %></td>
+	    <% i = i + 1 %>
+	  <% end %>
+	<% end %>
+	</tr>
+	</tr>
+
+
+
+
+
+
+	
+	    	
+</table>
+
+<% end %>
