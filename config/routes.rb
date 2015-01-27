@@ -3,6 +3,7 @@ GalleryScrape::Application.routes.draw do
   resources :gallery, :scrape_imgs
 
     match 'gallery/show' => 'gallery#show'
+    match 'seotest/index' => 'seotest#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
