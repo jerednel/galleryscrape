@@ -1,0 +1,2 @@
+module SeotestHelper
+end
