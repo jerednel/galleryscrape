@@ -10,14 +10,18 @@
 		<p>Enjoy!</p>
 </div>
 <table>
-	<tr><td>CTYHOCNS (1 per line)</td></tr>
-  <tr><Td><%= text_area_tag "CTYHOCN", nil, rows: 10 %></td></tr>
+	<tr><td><strong>CTYHOCNS <small><em>(1 per line)</em></small></strong></td></tr>
+  <tr><Td><%= text_area_tag "CTYHOCN", nil, rows: 10, :placeholder => "LHRHITW\nLONHITW" %></td></tr>
  </td></tr>
+   <tr><td> <%= check_box_tag 'Horizontal', 'Yes' %> Horizontal Orientation</td></tr>
+  <tr><td> <%= check_box_tag 'LargeImages', 'Yes' %> Large Images</td></tr>
+  <tr><td>&nbsp;</td></tr>
   <tr><Td><%= submit_tag "Get Gallery Images", :class=>"btn btn-primary" %></td></tr>
 
-  <tr><td> <%= check_box_tag 'Horizontal', 'Yes' %> Horizontal Orientation</td></tr>
-  <tr><td> <%= check_box_tag 'LargeImages', 'Yes' %> Large Images</td></tr>
+
  </table>
 <% end %>
-
+<div>
+	<p>&nbsp;</p>
+</div>
 </div>
