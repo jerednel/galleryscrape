@@ -1,12 +1,23 @@
+<div class="container" align="center">
 <%= form_tag "/gallery/show/", :method => 'post' do %>
-<p><strong>Image Gallery Scraper</strong></p>
+<div class="row">
+	<div class="jumbotron">
+		<h1>Image Gallery Scraper</h1>
+		<p>Enter CTYHOCNs in the text box below to scrape the images, descriptions and URLs.  These can be easily pasted into Excel for further editing.</p>
+		
+	</div>
+	<p>More than one CTYHOCN can be entered, however, if the request takes too long the server will time out.  Try to keep it to just a couple of hotels at a time to reduce frustrations.</p>
+		<p>Enjoy!</p>
+</div>
 <table>
 	<tr><td>CTYHOCNS (1 per line)</td></tr>
   <tr><Td><%= text_area_tag "CTYHOCN", nil, rows: 10 %></td></tr>
  </td></tr>
-  <tr><Td><%= submit_tag "Get Gallery Images" %></td></tr>
+  <tr><Td><%= submit_tag "Get Gallery Images", :class=>"btn btn-primary" %></td></tr>
 
   <tr><td> <%= check_box_tag 'Horizontal', 'Yes' %> Horizontal Orientation</td></tr>
   <tr><td> <%= check_box_tag 'LargeImages', 'Yes' %> Large Images</td></tr>
  </table>
 <% end %>
+
+</div>
