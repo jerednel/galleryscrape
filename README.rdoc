@@ -10,10 +10,10 @@ Instructions for contributing.
 
 Make sure you have Git installed.
 
-```
-git clone https://github.com/jerednel/galleryscrape.git
-cd galleryscrape
-edit whatever you need to!
-```
+
+    git clone https://github.com/jerednel/galleryscrape.git
+    cd galleryscrape
+    edit whatever you need to!
+
 
 link:https://still-river-5991.herokuapp.com/
