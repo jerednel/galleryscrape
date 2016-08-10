@@ -8,14 +8,17 @@
 
 
 <table class="table table-hover">
+	<strong><tr><th>CTYHOCN</th><th>Thumbnail</th><th>Caption</th><th>Image URL</th><th>ALT Text</th></tr></strong>
 	<% @table_hsh.each do |row| %>
 	  <% i = 0 %>
+
 	  <% if img_size == 0 %> 
 	    <% row[:imgs].each do |img_url| %>
 	    <tr>
 	    	<td><%= row[:ctyhocn] %></td><td><img src="http://www3.hilton.com<%=img_url %>"></td>
 	    	<td><%= row[:captions][i].to_s.gsub!('<span class="title">', '').gsub!('</span>', '')  %></td>
 	    	<td>http://www3.hilton.com<%=img_url %></td>
+	    	<td><%= row[:alt_text][i].to_s.gsub!('<span class="image_alt">', '').gsub!('</span>', '')   %></td>
 	    </tr>
 	    <% i = i + 1 %>
 	  <% end %>	    
@@ -25,7 +28,7 @@
 	    	<td><%= row[:ctyhocn] %></td><td><img src="http://www3.hilton.com<%= img_url.to_s.gsub!('<span class="img">', '').gsub!('</span>', '') %>"></td>
 	    	<td><%= row[:captions][i].to_s.gsub!('<span class="title">', '').gsub!('</span>', '')  %></td>
 	    	<td>http://www3.hilton.com<%= img_url.to_s.gsub!('<span class="img">', '').gsub!('</span>', '') %></td>
-
+	    	<td><%= row[:alt_text][i].to_s.gsub!('<span class="image_alt">', '').gsub!('</span>', '')  %></td>
 	    </tr>
 	    <% i = i + 1 %>
 	  <% end %>	    

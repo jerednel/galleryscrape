@@ -16,7 +16,7 @@ class GalleryController < ApplicationController
 	def scrape_imgs(arr)
 		@img_urls = Array.new
 		@img_captions = Array.new
-
+		@img_alts = Array.new
 		@table_hsh = Array.new
 
 		arr.each do |ctyhocn|
@@ -26,8 +26,8 @@ class GalleryController < ApplicationController
 			@img_urls = doc.css('.gallery img').map{ |i| i['src'] } # array of image urls [url1, url2, url3]
 			@large_img_urls = doc.css('.gallery .img').map{ |url| url }
 			@img_captions = doc.css('.gallery .title').map{ |alt| alt} 
-			#@img_captions = doc.css('.gallery .image_alt').map{ |alt| alt } # array of image captions [caption1, caption2, caption 3]
-			@table_hsh << {:ctyhocn => ctyhocn, :imgs => @img_urls, :captions => @img_captions, :large_img_urls => @large_img_urls }
+			@img_alts = doc.css('.gallery .image_alt').map{ |alt| alt } # array of image captions [caption1, caption2, caption 3]
+			@table_hsh << {:ctyhocn => ctyhocn, :imgs => @img_urls, :captions => @img_captions, :large_img_urls => @large_img_urls, :alt_text => @img_alts }
 			#@img_captions = @doc.css('.gallery .image_alt').map{ |alt| alt }
 		end
 
